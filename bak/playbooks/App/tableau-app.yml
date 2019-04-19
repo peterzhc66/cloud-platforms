@@ -1,5 +1,0 @@
----
- - hosts: tableau 
-#   connection: local
-   roles:
-    - tableau

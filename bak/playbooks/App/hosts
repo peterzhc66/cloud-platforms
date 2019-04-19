@@ -1,7 +1,0 @@
-[tableau]
-#20.188.212.62
-Tableau
-#[tableau:vars]
-#ansible_connection=ssh
-#ansible_ssh_port=22
-#ansible_ssh_user=azureuser

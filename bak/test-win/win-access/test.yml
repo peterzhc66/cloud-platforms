@@ -1,9 +1,0 @@
----
-- hosts: windows
-  tasks:
-    - 
-      name: exeute hello powershell
-      script: hello.ps1 universe
-      register: out
-
-    - debug: var=out.stdout_lines
