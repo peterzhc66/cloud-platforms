@@ -1,0 +1,10 @@
+---
+ansible_user: 'azureuser@13.75.182.40'
+ansible_password: 'MyPassword123!'
+ansible_winrm_transport: kerberos
+
+ansible_port: '5985'
+ansible_connection: 'winrm'
+
+ansible_winrm_server_cert_validation: ignore
+validate_certs: false

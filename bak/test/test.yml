@@ -1,0 +1,10 @@
+---
+# This playbook deploys the required stacks in this site.
+
+- name: only a test
+  hosts: tab
+  shell: |
+    echo "hello world" >> /tmp/hello
+  tags:
+    - test
+
