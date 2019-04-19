@@ -38,7 +38,12 @@
     - name: Display the instances info
       debug:
         msg: "{{ item }}"
-      with_items: "{{ gce.instance_data }}"
+      loop: "{{ gce.instance_data }}"
+
+    - name: check if exists ssh config
+      shell: |
+        [ -d ~/.ssh ] || mkdir ~/.ssh
+        [ -e {{ config }} ] || touch {{ config }}
 
     - name: Insert vms to ssh config
       blockinfile:
@@ -48,7 +53,7 @@
           Host {{ item.0 }}
           User joehmchiu
           StrictHostKeyChecking no
-          IdentityFile ~/dev/gcp/foo
+          IdentityFile /opt/vars/foo
           Hostname {{ item.1.public_ip }}
           Port 22
       with_together:
