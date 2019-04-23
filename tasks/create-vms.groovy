@@ -12,9 +12,12 @@ node {
     ok = '\u2705'
     no = '\u274C'
 
+	subdir = dir('subDir')
+
     stage 'Preload check and run'
     node() {
         sh "sudo ls -ltrhR ${workspace}*"
+        sh "sudo ls -ltrhR ${subdir}"
         sh "sudo ls -ltrhR ./"
 		// sh "sudo sh ./lib/run.sh"
     }
