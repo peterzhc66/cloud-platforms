@@ -33,7 +33,7 @@ node() {
 	echo '$&@*&%#)(*#@(*_)*&%#*^@&$)*'
 }
 
-stage 'Power On'
+stage "${msg}"
 node() {
 	sh "cd './${task}';sudo ansible-playbook -vvv ${playbook}"
 }
