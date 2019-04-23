@@ -1,7 +1,4 @@
 node {
-    // loading and running jenkins tasks
-    workspace = pwd()
-
     project = "cloud-platforms"
     playbook= "create-vms.yml"
     task = "gcp"
