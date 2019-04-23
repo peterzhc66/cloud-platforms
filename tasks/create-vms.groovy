@@ -20,7 +20,7 @@ node {
 
     stage 'Preload check and run'
     node() {
-		sh "sudo sh ./lib/run.sh"
+	sh "sudo sh ./lib/run.sh"
     }
 
     load "/opt/bin/jenkins-run.groovy"
