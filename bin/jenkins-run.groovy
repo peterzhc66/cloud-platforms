@@ -35,7 +35,7 @@ node() {
 
 stage "${msg}"
 node() {
-	sh "cd './${task}';sudo ansible-playbook -vvv ${playbook}"
+	sh "cd './${task}';sudo ansible-playbook ${playbook}"
 }
 
 stage "Tasks Finalized"
