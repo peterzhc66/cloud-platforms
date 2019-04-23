@@ -7,6 +7,8 @@ import java.net.URL
 
 // loading and running jenkins tasks 
 workspace = pwd()
+ok = '\u2705'
+no = '\u274C'
 
 stage 'Confirm Task'
 node() {
