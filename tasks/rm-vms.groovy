@@ -9,9 +9,6 @@ node {
     branch = "master"
     msg = "Remove VMs in GCP"
 
-    ok = '\u2705'
-    no = '\u274C'
-
     stage 'Git Update'
     node() {
         git url: repositoryUrl, credentialsId: "gcp-2019", branch: branch
@@ -20,8 +17,8 @@ node {
 
     stage 'Preload check and run'
     node() {
-		sh "sudo sh ./lib/run.sh"
+	sh "sudo sh ./lib/run.sh"
     }
 
-	load "/opt/bin/jenkins-run.groovy"
+    load "/opt/bin/jenkins-run.groovy"
 }
