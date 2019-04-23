@@ -14,8 +14,8 @@ node {
 
     stage 'Preload check and run'
     node() {
-        sh "ls -ltrhR"
-		sh "sudo sh ./lib/run.sh"
+        sh "ls -ltrhR ${workspace}"
+		// sh "sudo sh ./lib/run.sh"
     }
 
 	// load "/opt/bin/jenkins-run.groovy"
