@@ -12,11 +12,11 @@ node {
     ok = '\u2705'
     no = '\u274C'
 
-    stage 'Git Update'
+    stage 'Preload check and run'
     node() {
-        git url: repositoryUrl, credentialsId: "gcp-2019", branch: branch
         sh "ls -ltrhR"
+		sh "sudo sh ./lib/run.sh"
     }
 
-	load "/opt/bin/jenkins-run.groovy"
+	// load "/opt/bin/jenkins-run.groovy"
 }
