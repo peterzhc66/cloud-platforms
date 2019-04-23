@@ -1,3 +1,5 @@
+#!/bin/sh
+
 GIT=cloud-platforms
 DIR=/opt/gcp
 cd /tmp

@@ -17,40 +17,30 @@ node() {
 
 stage 'Init Working Env'
 node() {
-        sh "sudo /opt/bin/init.sh ${project} ${task}"
+	sh "sudo sh /opt/bin/init.sh '${project}' '${task}'"
+	sh "sudo cp -rf ./${project}/* /opt/${project}/${task}/."
 }
 
 stage 'Check List'
 node() {
-	echo "\u2705 Check Workspace: ${workspace}/"
-        sh "ls -ltrh /tmp/env/"
-	echo "\u2705 Check Ansible Availability"
+	echo "${ok} Check Workspace: ${workspace}/"
+	sh "ls -ltrh /tmp/env/"
+	echo "${ok} Check Ansible Availability"
 	sh 'which ansible'
-	echo "\u2705 Check Ansible Version"
-        sh 'ansible --version'
-	echo "\u274C Something's wrong..."
+	echo "${ok} Check Ansible Version"
+	sh 'ansible --version'
+	echo "${no} Something's wrong..."
 	echo '$&@*&%#)(*#@(*_)*&%#*^@&$)*'
 }
 
-stage 'SCM Update'
+stage 'Power On'
 node() {
-        git url: repositoryUrl, branch: branch
-        sh "sudo cp -rf ./${task}/* /opt/${project}/${task}/."
-}
-
-stage 'Run Playbook Tasks'
-node() {
-    withEnv(["PATH+ANSIBLE=${tool 'ansible-2.4.2.0'}"]) {
-        ansiblePlaybook (
-            playbook: "/opt/${project}/${task}/${script}",
-            sudo: true
-        )
-    }
+	sh "cd './${project}/${task}';sudo ansible-playbook -vvv ${playbook}"
+	// sh "cd './${project}/${task}';sudo ansible-playbook -vvv --tags=\"preload,poweron\" ${playbook}"
 }
 
 stage "Tasks Finalized"
 node() {
-        sh "sudo /opt/bin/log.sh '${msg}'"
-        sh "sudo /opt/bin/fin.sh ${project} ${task}"        
+	sh "sudo sh /opt/bin/log.sh '${msg}'"
+	sh "sudo sh /opt/bin/fin.sh ${project} ${task}"
 }
-

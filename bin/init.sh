@@ -1,3 +1,5 @@
+#!/bin/sh
+
 PROJ=$1
 TASK=$2
 DIR=/opt/$PROJ/$TASK
