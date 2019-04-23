@@ -38,7 +38,7 @@ node() {
 	sh "cd './${task}';sudo ansible-playbook ${playbook}"
 }
 
-stage "Tasks Finalized"
+stage "Task Finalized"
 node() {
 	sh "sudo sh /opt/bin/log.sh '${msg}'"
 	sh "sudo sh /opt/bin/fin.sh ${project} ${task}"
