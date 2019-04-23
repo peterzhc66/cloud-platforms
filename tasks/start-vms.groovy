@@ -22,6 +22,6 @@ node {
     node() {
 		sh "sudo sh ./lib/run.sh"
     }
-
-	load "/opt/bin/jenkins-run.groovy"
+	
+    load "/opt/bin/jenkins-run.groovy"
 }
