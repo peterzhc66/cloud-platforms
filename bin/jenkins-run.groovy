@@ -17,8 +17,8 @@ node() {
 
 stage 'Init Working Env'
 node() {
-	sh "sudo sh /opt/bin/init.sh '${project}' '${task}'"
-	sh "sudo cp -rf ./${project}/* /opt/${project}/${task}/."
+	sh "sudo sh /opt/bin/init.sh '${task}'"
+	sh "sudo cp -rf ./${task}/* /opt/${task}/."
 }
 
 stage 'Check List'
@@ -35,8 +35,7 @@ node() {
 
 stage 'Power On'
 node() {
-	sh "cd './${project}/${task}';sudo ansible-playbook -vvv ${playbook}"
-	// sh "cd './${project}/${task}';sudo ansible-playbook -vvv --tags=\"preload,poweron\" ${playbook}"
+	sh "cd './${task}';sudo ansible-playbook -vvv ${playbook}"
 }
 
 stage "Tasks Finalized"
