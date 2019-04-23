@@ -7,7 +7,7 @@ node {
     task = "gcp"
     repositoryUrl = "https://github.com/joehmchiu/${project}.git"
     branch = "master"
-    msg = "Remove VMs in GCP"
+    msg = "Start VMs in GCP"
 
     ok = '\u2705'
     no = '\u274C'
