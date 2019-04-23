@@ -9,9 +9,6 @@ node {
     branch = "master"
     msg = "Create VMs in GCP"
 
-    ok = '\u2705'
-    no = '\u274C'
-
     stage 'Git Update'
     node() {
         git url: repositoryUrl, credentialsId: "gcp-2019", branch: branch
