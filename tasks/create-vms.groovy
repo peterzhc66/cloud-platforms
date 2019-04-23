@@ -14,7 +14,7 @@ node {
 
     stage 'Preload check and run'
     node() {
-        sh "ls -ltrhR ${workspace}"
+        sh "sudo ls -ltrhR ${workspace}*"
 		// sh "sudo sh ./lib/run.sh"
     }
 
