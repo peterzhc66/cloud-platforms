@@ -12,7 +12,7 @@ node {
         sh "ls -ltrhR"
     }
 
-    stage 'Preload check and run'
+    stage 'Preload task check and run'
     node() {
 	sh "sudo sh ./lib/run.sh"
     }
