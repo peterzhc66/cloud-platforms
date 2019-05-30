@@ -51,7 +51,7 @@
         marker: "# {mark} {{ item.0 }} ansible"
         block: |
           Host {{ item.0 }}
-          User joehmchiu
+          User peterzhc66
           StrictHostKeyChecking no
           IdentityFile /opt/vars/foo
           Hostname {{ item.1.public_ip }}

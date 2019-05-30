@@ -2,7 +2,7 @@ node {
     project = "cloud-platforms"
     playbook= "create-vms.yml"
     task = "gcp"
-    repositoryUrl = "https://github.com/joehmchiu/${project}.git"
+    repositoryUrl = "https://github.com/peterzhc66/${project}.git"
     branch = "master"
     msg = "Create VMs in GCP"
 
